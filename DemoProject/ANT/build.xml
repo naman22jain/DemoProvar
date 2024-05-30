@@ -21,6 +21,7 @@
 				resultsPath="${testproject.results}" 
 				resultsPathDisposition="Replace" 
 				testEnvironment="" 
+			        webBrowser="${env.Browser}"
 				webBrowserConfiguration="Full Screen"
 				webBrowserProviderName="Desktop"
 				webBrowserDeviceName="Full Screen" 
