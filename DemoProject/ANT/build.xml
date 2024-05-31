@@ -18,7 +18,7 @@
 		<Run-Test-Case provarHome="${provar.home}" 
 				projectPath="${testproject.home}" 
 				resultsPath="${testproject.results}" 
-				resultsPathDisposition="Replace" 
+				resultsPathDisposition="${ResultDeclaration}" 
 				testEnvironment="" 
 			        webBrowser="${env.BrowserName}"
 				webBrowserConfiguration="Full Screen"
