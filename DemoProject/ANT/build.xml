@@ -37,7 +37,7 @@
 		
 			<fileset dir="../tests"><include name="Test Case 1.testcase"/></fileset>
 
-			<emailProperties sendEmail="true" primaryRecipients="naman807777@gmail.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="true" attachZip="false"/>
+			<emailProperties sendEmail="true" primaryRecipients="naman807777@gmail.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="true" attachZip="true"/>
 			<attachmentProperties includeAllFailuresInSummary="true" includeBdd="false" includeSkipped="false" includeTestCasePathHierarchy="true" includeTestCaseShowSummary="true" includeBasicLogs="false" includeDetailLogs="false" includeDiagnosticTrace="false" includeTestStepTime="true" includeNoScreenshot="false" includeScreenshotThumbnail="false" includeFullScreenShot="true"/>
 		</Run-Test-Case>
 
