@@ -3,7 +3,7 @@ pipeline{
 stages{
 stage("build"){
 steps{
-echo 'building the app now'
+echo 'building the application now'
 }
 }
 }
