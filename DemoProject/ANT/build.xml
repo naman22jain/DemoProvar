@@ -20,7 +20,7 @@
 				resultsPath="${testproject.results}" 
 				resultsPathDisposition="${env.ResultDeclaration}" 
 				testEnvironment="" 
-			        webBrowser="${env.BrowserName}"
+			        webBrowser="${BrowserName}"
 				webBrowserConfiguration="Full Screen"
 				webBrowserProviderName="Desktop"
 				webBrowserDeviceName="Full Screen" 
