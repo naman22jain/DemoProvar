@@ -1,20 +1,31 @@
 pipeline {
         
-agent any
+agent {
+    dockerfile true
+}
 
     stages {
         stage('Checkout') {
             steps {
                 // Checkout code from Git
-                git 'https://github.com/naman22jain/DemoProvar.git'
+         git 'https://github.com/naman22jain/DemoProvar.git'  https://github.com/naman22jain/DemoProvar.git
             }
         }
-        
         stage('Build') {
             steps {
-                // Pass parameters to Ant build script using system properties
-                bat "ant -f DemoProject/ANT/build.xml"
+                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
+
+                sh "ant -f DemoProject/ANT/build.xml"
             }
+            
         }
+        
     }
+       post {
+        success {
+            echo "Success: Good job!"
+        }        
+             
+    }   
 }
+
