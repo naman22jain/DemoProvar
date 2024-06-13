@@ -8,7 +8,7 @@ agent {
         stage('Checkout') {
             steps {
                 // Checkout code from Git
-         git 'https://github.com/naman22jain/DemoProvar.git'  https://github.com/naman22jain/DemoProvar.git
+         git 'https://github.com/naman22jain/DemoProvar.git'
             }
         }
         stage('Build') {
