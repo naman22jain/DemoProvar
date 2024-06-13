@@ -1,8 +1,11 @@
 pipeline {
         
 agent {
-    dockerfile true
-}
+        dockerfile {
+            filename 'Dockerfile'
+            dir 'DemoProject' // Specify the directory containing your Dockerfile
+        }
+    }
 
     stages {
         stage('Checkout') {
@@ -15,7 +18,7 @@ agent {
             steps {
                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
 
-                sh "ant -f DemoProject/ANT/build.xml-v"
+                sh "ant -f DemoProject/ANT/build.xml -v"
             }
             
         }
