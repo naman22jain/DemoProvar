@@ -18,7 +18,7 @@ agent {
             steps {
                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
 
-                sh "ant -f DemoProject/ANT/build.xml -v"
+                sh "ant -f ${pwd()}/DemoProject/ANT/build.xml -v"
             }
             
         }
