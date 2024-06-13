@@ -16,9 +16,9 @@ agent {
         }
         stage('Build') {
             steps {
-                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
-
-                sh "ant -f ${pwd()}/DemoProject/ANT/build.xml -v"
+                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                script {
+                    docker.build("my-image")
             }
             
         }
