@@ -1,34 +1,32 @@
 pipeline {
-        
-agent {
-        dockerfile {
-            filename 'Dockerfile'
-            dir 'DemoProject' // Specify the directory containing your Dockerfile
-        }
+    agent {
+        dockerfile true
     }
-
     stages {
-        stage('Checkout') {
+        stage('Run Provar Tests') {
             steps {
-                // Checkout code from Git
-         git 'https://github.com/naman22jain/DemoProvar.git'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
+                sh "xvfb-run ant -f ANT/build.xml -v"
             }
         }
-        stage('Build') {
-            steps {
-                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                script {
-                    docker.build("my-image")
-            }
-            
-        }
-        
     }
-       post {
+    post {
+        always {
+            junit allowEmptyResults: true, testResults: 'ANT/Results/*.xml'
+            cleanWs notFailBuild: true /* cleans up the workspace */
+        }
         success {
             echo "Success: Good job!"
         }        
-             
+        failure {            
+            echo 'Failure: Something went wrong with the Provar ANT build. Printing environment for debugging'            
+            sh 'printenv'
+            echo 'Printing hosts'
+            sh 'cat /etc/hosts'
+            echo 'Searching for provar directories/files in the system...'
+            sh 'find / -name "provar*"'
+            echo 'Finding chrome drivers'
+            sh "find / -name '*chromedriver*'"
+        }        
     }   
 }
-
