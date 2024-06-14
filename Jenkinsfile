@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        dockercontainer true
+        dockerContainer true
     }
     stages {
         stage('Run Provar Tests') {
