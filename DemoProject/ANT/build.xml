@@ -33,6 +33,7 @@
 				secretsPassword="${secrets.password}"
 				testEnvironmentSecretsPassword="${testenvironment.secretspassword}"
 				invokeTestRunMonitor="true"
+				licensPath = "../.licenses"
 				>
 		
 			<fileset dir="../tests"><include name="Test Case 1.testcase"/></fileset>
