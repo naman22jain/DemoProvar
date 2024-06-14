@@ -104,7 +104,7 @@ ENV PROVAR_HOME=${REPO_HOME}/Provar_ANT_${PROVAR_VERSION} \
 # RUN chmod +x ${WORKSPACE}/runSeleniumGridHub.sh
 ## (Optional: Licenses folder must be in same directory as Dockerfile first)
 # Copy Licenses folder to container for execution tracking
-COPY .licenses/ ${PROVAR_HOME}/.licenses
+#COPY .licenses/ ${PROVAR_HOME}/.licenses
 #COPY .smtp/ ${PROVAR_HOME}/.smtp
 ## Set working directory for image
 WORKDIR ${WORKSPACE}
