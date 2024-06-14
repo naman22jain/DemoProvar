@@ -107,7 +107,7 @@ ENV PROVAR_HOME=${REPO_HOME}/Provar_ANT_${PROVAR_VERSION} \
 # COPY .licenses/ ${PROVAR_HOME}/.licenses
 #COPY .smtp/ ${PROVAR_HOME}/.smtp
 ## Set working directory for image
-WORKDIR ${WORKSPACE}
+WORKDIR /home/DemoProject
 ## Entrypoint script to run Provar tests
 RUN echo "#!/bin/sh \n xvfb-run ant -f ANT/$BUILD_FILE" > ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
