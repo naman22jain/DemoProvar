@@ -99,7 +99,7 @@ ENV PROVAR_HOME=${REPO_HOME}/Provar_ANT_${PROVAR_VERSION} \
     CACHEPATH=${WORKSPACE}/../.provarCaches
 ## (Optional: Only use for local runs or environments not using a Version Control System) Copy local project files to docker image
 ## Otherwise files will be pulled from Git/etc. (in that case comment this line) and placed into ${WORKSPACE} where ${WORKSPACE} contains the .testproject file/etc.
-COPY . ${WORKSPACE}
+COPY . ${WORKSPACE}/
 # COPY ./runSeleniumGridHub.sh ./nodeConfig.json /usr/bin/
 # RUN chmod +x ${WORKSPACE}/runSeleniumGridHub.sh
 ## (Optional: Licenses folder must be in same directory as Dockerfile first)
