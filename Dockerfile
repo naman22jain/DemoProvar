@@ -109,6 +109,6 @@ COPY . ${WORKSPACE}/
 ## Set working directory for image
 WORKDIR ${WORKSPACE}
 ## Entrypoint script to run Provar tests
-RUN echo "#!/bin/sh \n xvfb-run ant -f ANT/$BUILD_FILE" > ./entrypoint.sh
+RUN echo "#!/bin/sh \n xvfb-run ant -f DemoProject/ANT/$BUILD_FILE" > ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
